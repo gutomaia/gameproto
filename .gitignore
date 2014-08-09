@@ -1,0 +1,7 @@
+*.check
+*.pyc
+build/
+deps/
+dist/
+tools/
+venv/
