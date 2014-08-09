@@ -47,9 +47,6 @@ class Player(pygame.sprite.Sprite):
     def update(self, dt, game):
         last = self.rect.copy()
 
-        if self.do_jump:
-            print "jumpping"
-
         if self.do_up:
             self.rect.y -= 300 * dt
         if self.do_down:
@@ -58,6 +55,9 @@ class Player(pygame.sprite.Sprite):
             self.rect.x -= 300 * dt
         if self.do_right:
             self.rect.x += 300 * dt
+
+        if self.do_jump:
+            self.do_jump = False
 
         self.do_up = False
         self.do_down = False
@@ -118,6 +118,8 @@ class Game(object):
             self.player.left()
         if key[pygame.K_RIGHT]:
             self.player.right()
+        if key[pygame.K_SPACE]:
+            self.player.jump()
 
     def deal_joystick(self):
         if self.joystick:
