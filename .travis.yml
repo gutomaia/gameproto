@@ -1,0 +1,8 @@
+language: python
+before_install:
+  - sudo apt-get install wine
+python:
+  - "2.7"
+script:
+  - make
+  - make dist
