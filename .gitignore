@@ -1,7 +1,12 @@
 *.check
 *.pyc
+.checkpoint/
+.downloads/
+.tools/
 build/
 deps/
 dist/
+pyinstaller.mk
+python.mk
 tools/
 venv/
