@@ -5,5 +5,5 @@ before_install:
 python:
   - "2.7"
 script:
-  - make
+  - make python.mk pyinstaller.mk
   - make dist
