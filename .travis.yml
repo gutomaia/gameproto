@@ -1,11 +1,17 @@
 language: python
-before_install:
-  - sudo apt-get update
-  - sudo apt-get install wine
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+
 python:
   - "2.7"
+
+before_install:
+  - sudo add-apt-repository ppa:ubuntu-wine/ppa -y
+  - sudo apt-get update
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+
+install:
+  - sudo apt-get install wine
+
 script:
   - make python.mk pyinstaller.mk
   - make dist
