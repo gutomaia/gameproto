@@ -6,8 +6,9 @@ PYGAME_VERSION = 1.9.1
 PYWIN32=pywin32-${PYWIN32_VERSION}.win32-py2.7.exe
 PYGAME_MSI=pygame-${PYGAME_VERSION}.win32-py2.7.msi
 
-WGET?=wget -q 
+WGET?=wget -q
 
+VIRTUALENV_ARGS=--system-site-packages
 MAKERY_URL=https://raw.githubusercontent.com/gutomaia/makery/master
 
 OK=\033[32m[OK]\033[39m
@@ -77,7 +78,7 @@ clean: python_clean
 	@rm -rf tools
 	@rm -rf reports
 
-purge: clean python_purge 
+purge: clean python_purge
 	@rm -rf deps
 	@rm -rf ${WINE_PATH}
 
